@@ -10,7 +10,7 @@ import QuoteCard from './components/QuoteCard';
 import { Quote } from './models';
 
 function App() {
-  const [quote, setQuote] = useState<Quote>({id: "", content: "Loading...", author: ""})
+  const [quote, setQuote] = useState<Quote>({id: "", content: "", author: ""})
   const [term, setTerm] = useState("")
   const [searchResults, setSearchResults] = useState<Quote[]>([])
   const [haveSearched, setHaveSearched] = useState<boolean>(false)
@@ -20,7 +20,6 @@ async function getQuote(){
 }
 
 useEffect(() => {
-  setQuote({id: "", content: "", author: ""})
   getQuote()
 }, [haveSearched])
 
